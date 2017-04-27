@@ -336,4 +336,5 @@ void DMA1_Channel3_IRQHandler(void)
 	void delay (void)
  {
    TIM_Cmd(TIM6, ENABLE);//start counting of timer TIM6
+   while(TIM_GetITStatus(TIM6, TIM_FLAG_Update) == SET);//waiting for interrupt
  }
